@@ -60,9 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             title: AccessibleHeadingText(
                 accessibilitySettings.isDark ? 'light mode' : 'Dark mode',
                 style: const TextStyle(
-                    fontSize: 17.0,
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold)),
+                    fontSize: 17.0, fontWeight: FontWeight.bold)),
             trailing: Switch(
               value: accessibilitySettings.isDark,
               onChanged: ((accessibilitySettings.monochrome == false) &&
@@ -125,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-           ListTile(
+          ListTile(
             title: const AccessibleHeadingText("Cognitive Disability  mode",
                 style: TextStyle(fontSize: 17.0)),
             trailing: Switch(
@@ -139,7 +137,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(
             height: 15,
           ),
-              ListTile(
+          ListTile(
             title: const AccessibleHeadingText("ADHD  mode",
                 style: TextStyle(fontSize: 17.0)),
             trailing: Switch(
@@ -151,16 +149,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const SizedBox(
             height: 15,
-          ),
-         
-          const AccessibilityImage(
-            image: AssetImage('assets/hello.png'),
-            width: 200,
-            height: 250,
-            fit: BoxFit.cover,
-            alignment: Alignment.center,
-            colorBlendMode: BlendMode.colorBurn,
-            filterQuality: FilterQuality.high,
           ),
 
           ListTile(
@@ -236,7 +224,6 @@ class _MyHomePageState extends State<MyHomePage> {
               'Adjust letter Space',
               style: TextStyle(
                 fontSize: 14.0,
-                color: Colors.red,
               ),
             ),
             trailing: Row(

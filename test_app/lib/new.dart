@@ -1,6 +1,8 @@
 import 'package:accessibility_features/accessibility_features.dart';
 import 'package:accessibility_features/accessibility_screen.dart';
 import 'package:accessibility_features/accessible_heading_text.dart';
+import 'package:accessibility_features/accessible_text.dart';
+import 'package:accessibility_features/accessiblity_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -34,9 +36,32 @@ class MyWidget extends StatelessWidget {
           ),
           body: const Padding(
             padding: EdgeInsets.all(20),
-            child: AccessibleHeadingText(
-              "Hello This is Accessibility...",
-              style: TextStyle(fontSize: 30),
+            child: Column(
+              children: [
+                AccessibleHeadingText(
+                  "Hello This is Accessibility...",
+                  style: TextStyle(fontSize: 30),
+                ),
+                SizedBox(height: 20),
+                AccessibleText(
+                  "This is a simple text widget",
+                  style: TextStyle(fontSize: 20),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: null,
+                  child: AccessibleText('Elevated Button'),
+                ),
+                AccessibilityImage(
+                  image: AssetImage('assets/hello.png'),
+                  width: 200,
+                  height: 250,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.center,
+                  colorBlendMode: BlendMode.colorBurn,
+                  filterQuality: FilterQuality.high,
+                ),
+              ],
             ),
           ),
         );
