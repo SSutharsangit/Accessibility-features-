@@ -6,7 +6,28 @@ class AccessibleHeadingText extends StatelessWidget {
   final String data;
   final TextStyle? style;
 
-  const AccessibleHeadingText(this.data, {super.key, this.style});
+  final StrutStyle? strutStyle;
+  final TextAlign? textAlign;
+  final TextDirection? textDirection;
+  final Locale? locale;
+  final bool? softWrap;
+  final TextOverflow? overflow;
+  final double? textScaleFactor;
+  final TextHeightBehavior? textHeightBehavior;
+  final Color? selectionColor;
+
+  const AccessibleHeadingText(this.data,
+      {super.key,
+      this.style,
+      this.strutStyle,
+      this.textAlign,
+      this.textDirection,
+      this.locale,
+      this.softWrap,
+      this.overflow,
+      this.textScaleFactor,
+      this.textHeightBehavior,
+      this.selectionColor});
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +47,19 @@ class AccessibleHeadingText extends StatelessWidget {
         ? Border.all(color: Colors.blue, width: 2.0)
         : null;
 
-    const baseFontSize = 20.0; 
+    const baseFontSize = 20.0;
 
     return Container(
-      padding:  accessibilitySettings.cognitiveMode ? const EdgeInsets.all(8.0) : const EdgeInsets.all(0.0), 
+      padding: accessibilitySettings.cognitiveMode
+          ? const EdgeInsets.all(8.0)
+          : const EdgeInsets.all(0.0),
       decoration: BoxDecoration(
         color: style?.backgroundColor ?? accessibilitySettings.textBgColor,
         border: boxBorder,
       ),
       child: Text(
         data,
-        textAlign: accessibilitySettings.textAlignment,
+        textAlign: textAlign ?? accessibilitySettings.textAlignment,
         style: (style ?? const TextStyle()).copyWith(
           fontWeight: style?.fontWeight ??
               (accessibilitySettings.impairedMode
@@ -49,6 +72,14 @@ class AccessibleHeadingText extends StatelessWidget {
           height: accessibilitySettings.lineHeight,
           letterSpacing: accessibilitySettings.letterSpacing,
         ),
+        strutStyle: strutStyle,
+        textDirection: textDirection,
+        locale: locale,
+        softWrap: softWrap,
+        overflow: overflow,
+        textScaleFactor: textScaleFactor,
+        textHeightBehavior: textHeightBehavior,
+        selectionColor: selectionColor,
       ),
     );
   }

@@ -1,7 +1,7 @@
 name: accessibility_features
-description: "A new Flutter package project."
+description: "This is a flutter project which is used to change the accessibility features of the device."
 version: 0.0.1
-# homepage:
+homepage: "https://github.com/SSutharsangit/Accessibility-features-.git"
 
 environment:
   sdk: '>=3.3.3 <4.0.0'
